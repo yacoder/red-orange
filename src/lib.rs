@@ -3,4 +3,5 @@
 
 //! This crate contains a collection of interesting code in Rust.
 
+
 pub mod numeric;
