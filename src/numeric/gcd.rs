@@ -26,19 +26,16 @@ use self::num::Zero;
 /// assert_eq!(21, gcd(252, 105));
 /// assert_eq!(21, gcd(105, 252));
 /// ```
-pub fn gcd<T: Copy + Zero + PartialOrd + Rem<Output=T>>(a : T, b : T) -> T
+pub fn gcd<T: Copy + Zero + PartialOrd + Rem<Output=T>>(mut a : T, mut b : T) -> T
 {
    assert!(a > T::zero());
    assert!(b > T::zero());
 
-   let mut aa = a;
-   let mut bb = b;
-
-   while bb > T::zero() {
-      let t = bb;
-      bb = aa % bb; 
-      aa = t;
+   while b > T::zero() {
+      let t = b;
+      b = a % b; 
+      a = t;
    }
 
-   aa
+   a
 }
