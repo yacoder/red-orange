@@ -31,6 +31,8 @@ pub fn gcd<T: Copy + Zero + PartialOrd + Rem<Output=T>>(mut a : T, mut b : T) ->
    assert!(a > T::zero());
    assert!(b > T::zero());
 
+
+   // https://en.wikipedia.org/wiki/Euclidean_algorithm
    while b > T::zero() {
       let t = b;
       b = a % b; 

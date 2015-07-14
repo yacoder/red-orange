@@ -3,3 +3,6 @@
 
 mod gcd;
 pub use self::gcd::gcd;
+
+mod prime;
+pub use self::prime::get_primes;
